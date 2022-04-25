@@ -1,0 +1,23 @@
+
+
+
+
+function x = inga(A,f)
+
+n= size(f);
+x= zeros(n,1);
+l = zeros(n-1,1);
+k = zeros(n-1,1);
+l(1) = f(1)/A(1,1); %f1/c1
+k(1) = -A(1,2)/A(1,1); %-b1/c1
+
+for i= 2 : n-1
+    
+    nevezo = (A(i,i-1) * k(i-1)- A(i,i));
+    l(i) = (f(i)-A(i,i-1)*l(i-1));
+    l(i) = l(i) / n;
+    
+    
+end
+
+end
